@@ -13,3 +13,11 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE, error = FALSE)
 library(readr)
 homicides <- read_csv(file = "homicide-data.csv")
 ```
+
+```{r baltimore data}
+library(lubridate)
+library(tidyverse)
+library(forcats)
+baltimore <- homicides %>% 
+  filter(city == "Baltimore") 
+```
