@@ -21,5 +21,7 @@ library(forcats)
 baltimore <- homicides %>% 
   filter(city == "Baltimore") %>% 
   mutate(reported_date = ymd(reported_date)) %>% 
-  mutate_at(vars(reported_date), funs(year, month, day))
+  mutate_at(vars(reported_date), funs(year, month, day)) %>% 
+  group_by(year, month) %>% 
+  summarize(total = n())
 ```
