@@ -36,7 +36,7 @@ baltimore <- homicides %>%
 ```
 
 #Recreating the Figure
-```{r Figure}
+```{r Figure, fig.height= 2, fig.width= 7}
 library(ggplot2)
 baltimore %>% 
   ggplot(aes(x = date, y = total)) +
