@@ -5,18 +5,18 @@ date: "11/21/2019"
 output: word_document
 ---
 
-#Set Global Options
+# Set Global Options
 ```{r  global_options}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE, error = FALSE)
 ```
 
-#Read Data In
+# Read Data In
 ``` {r read homicide data in}
 library(readr)
 homicides <- read_csv(file = "homicide-data.csv")
 ```
 
-#Cleaning Data
+# Cleaning Data
 ```{r baltimore data}
 library(lubridate)
 library(tidyverse)
@@ -35,7 +35,7 @@ baltimore <- homicides %>%
                                    labels = c("Summer", "Winter")))
 ```
 
-#Recreating the Figure
+# Recreating the Figure
 ```{r Figure, fig.height= 3, fig.width= 10}
 library(ggplot2)
 baltimore %>% 
