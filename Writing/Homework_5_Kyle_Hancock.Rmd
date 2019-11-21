@@ -8,3 +8,8 @@ output: word_document
 ```{r  global_options}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE, error = FALSE)
 ```
+
+``` {r read homicide data in}
+library(readr)
+homicides <- read_csv(file = "homicide-data.csv")
+```
