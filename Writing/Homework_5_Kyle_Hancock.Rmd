@@ -19,5 +19,7 @@ library(lubridate)
 library(tidyverse)
 library(forcats)
 baltimore <- homicides %>% 
-  filter(city == "Baltimore") 
+  filter(city == "Baltimore") %>% 
+  mutate(reported_date = ymd(reported_date)) %>% 
+  mutate_at(vars(reported_date), funs(year, month, day))
 ```
