@@ -36,5 +36,8 @@ baltimore <- homicides %>%
 library(ggplot2)
 baltimore %>% 
   ggplot(aes(x = date, y = total)) +
-  geom_col(aes(fill = winter_vs_summer))
+  geom_col(aes(fill = winter_vs_summer)) +
+  geom_vline(xintercept = ymd("2015-4-12"), color = "red", linetype = 2, size = 1.2) +
+  geom_text(aes(x = ymd("2015-4-12"), label = "Arrest of \n Freddie Gray", y = 40), color = "gray80",
+            hjust = "right")
 ```
