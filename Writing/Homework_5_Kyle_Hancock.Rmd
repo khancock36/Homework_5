@@ -42,5 +42,7 @@ baltimore %>%
             hjust = "right") +
   geom_smooth(span = .1, se = FALSE) +
   labs(x = "Date", y = "Monthly homicides", fill = "", title = "Homicides in Baltimore, MD") +
-  scale_fill_manual(values = c("gray80", "lightblue"))
+  scale_fill_manual(values = c("gray80", "lightblue")) +
+  theme_dark() +
+  theme(legend.position = "bottom") 
 ```
