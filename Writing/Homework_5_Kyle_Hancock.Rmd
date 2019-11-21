@@ -5,3 +5,6 @@ date: "11/21/2019"
 output: word_document
 ---
 
+```{r  global_options}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, error = FALSE)
+```
