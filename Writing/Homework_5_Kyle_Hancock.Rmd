@@ -23,5 +23,11 @@ baltimore <- homicides %>%
   mutate(reported_date = ymd(reported_date)) %>% 
   mutate_at(vars(reported_date), funs(year, month, day)) %>% 
   group_by(year, month) %>% 
-  summarize(total = n())
+  summarize(total = n()) %>% 
+  mutate(date = paste(month, year, sep = "-15-"),
+         date = mdy(date)) %>% 
+  mutate(winter_vs_summer = month(date) %in% c("11", "12", "1", "2", "3", "4"), 
+         winter_vs_summer = factor(winter_vs_summer,
+                                   levels = c(FALSE, TRUE),
+                                   labels = c("Summer", "Winter")))
 ```
