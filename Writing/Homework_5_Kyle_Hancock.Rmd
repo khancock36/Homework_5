@@ -41,5 +41,6 @@ baltimore %>%
   geom_text(aes(x = ymd("2015-4-12"), label = "Arrest of \n Freddie Gray", y = 40), color = "gray80",
             hjust = "right") +
   geom_smooth(span = .1, se = FALSE) +
-  labs(x = "Date", y = "Monthly homicides", fill = "", title = "Homicides in Baltimore, MD")
+  labs(x = "Date", y = "Monthly homicides", fill = "", title = "Homicides in Baltimore, MD") +
+  scale_fill_manual(values = c("gray80", "lightblue"))
 ```
